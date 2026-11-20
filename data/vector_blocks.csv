@@ -1,0 +1,4 @@
+wave,block_id,device,utc_start,step_seconds,layout
+2,V10,I6,2026-11-01T06:01:00Z,30,M2
+4,V11,I6,2026-11-01T06:02:00Z,30,M2
+6,V12,I6,2026-11-01T06:01:00Z,30,M1

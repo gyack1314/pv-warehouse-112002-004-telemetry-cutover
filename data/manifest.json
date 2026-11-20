@@ -1,0 +1,97 @@
+{
+  "pack": "telemetry-cutover",
+  "tables": {
+    "legacy_channels": {
+      "columns": [
+        "wave",
+        "device",
+        "channel",
+        "local_at",
+        "centivolt",
+        "quality"
+      ],
+      "rows": 5,
+      "sha256": "47ce4327a157669d852b063844c2c7620d7e36adb35d79b62a18733675efeb88"
+    },
+    "layouts": {
+      "columns": [
+        "wave",
+        "layout",
+        "slot",
+        "channel",
+        "handover_group"
+      ],
+      "rows": 6,
+      "sha256": "1cb7a25c8ed7efcba4a377ed34b447dd2b3b71a79e84155435924ad976aa3bcd"
+    },
+    "vector_blocks": {
+      "columns": [
+        "wave",
+        "block_id",
+        "device",
+        "utc_start",
+        "step_seconds",
+        "layout"
+      ],
+      "rows": 3,
+      "sha256": "88d2db8b7be824e9dc11449f8e590a8c8140f675539662a306e47245920d3ef1"
+    },
+    "vector_samples": {
+      "columns": [
+        "wave",
+        "block_id",
+        "sample_index",
+        "slot",
+        "raw",
+        "scale10",
+        "quality_mask",
+        "sample_state"
+      ],
+      "rows": 12,
+      "sha256": "172a7f9aa96b870f7cf1b412bf5b7b3f164be74806a7736439ee0568ec6db8cd"
+    },
+    "cutovers": {
+      "columns": [
+        "wave",
+        "device",
+        "handover_group",
+        "start",
+        "end"
+      ],
+      "rows": 2,
+      "sha256": "14ef17227d36d03469c1f6f5457786bbd8e29ce369cf60f764b75e7025ed9d43"
+    },
+    "completions": {
+      "columns": [
+        "wave",
+        "device",
+        "handover_group",
+        "start",
+        "end",
+        "expected_entries"
+      ],
+      "rows": 2,
+      "sha256": "7f306d90edf08448a2d1353891e27ff460bf06e0ac5fd542451b70993121b09f"
+    }
+  },
+  "references": [
+    [
+      "vector_samples",
+      "block_id",
+      "vector_blocks",
+      "block_id"
+    ],
+    [
+      "vector_blocks",
+      "layout",
+      "layouts",
+      "layout"
+    ],
+    [
+      "completions",
+      "handover_group",
+      "cutovers",
+      "handover_group"
+    ]
+  ]
+}

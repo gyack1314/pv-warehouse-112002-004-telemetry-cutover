@@ -1,0 +1,7 @@
+wave,layout,slot,channel,handover_group
+1,M1,0,dc-A,array
+1,M1,1,dc-B,array
+1,M1,2,aux,auxiliary
+3,M2,0,dc-B,array
+3,M2,1,dc-A,array
+3,M2,2,aux,auxiliary
